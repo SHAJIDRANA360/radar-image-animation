@@ -1,0 +1,112 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Radar Image Animation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0b1220;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .button {
+            padding: 10px 16px;
+            border: 0;
+            border-radius: 6px;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .radar {
+            width: 100%;
+            height: 75vh;
+            min-height: 400px;
+            background: #ffffff;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 19px;
+            }
+
+            .radar {
+                height: 70vh;
+                min-height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌦️ RADAR IMAGE ANIMATION</h1>
+
+            <button class="button" onclick="refreshRadar()">
+                Refresh Radar
+            </button>
+        </div>
+
+        <div class="radar">
+            <iframe
+                id="radarFrame"
+                src="http://wx.baf.mil.bd/METBSR/images/omar/slider/index.php"
+                title="Radar Image Animation"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        function refreshRadar() {
+            const frame = document.getElementById('radarFrame');
+            frame.src = frame.src;
+        }
+    </script>
+</body>
+</html>
+```
